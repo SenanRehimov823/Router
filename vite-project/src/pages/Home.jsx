@@ -4,9 +4,7 @@ import axios from 'axios';
 const Home = () => {
   const [data, setData] = useState([]);
   const [basket, setBasket] = useState(() => {
-    const storedBasket = localStorage.getItem("basket");
-    
-    return storedBasket && storedBasket !== "undefined" ? JSON.parse(storedBasket) : []; 
+    return JSON.parse(localStorage.getItem("basket")) || [];
   });
 
   useEffect(() => {
